@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Section 7: Get Ready for the Future: ES6 / ES2015</title>
+
+    <style>
+        .box {
+            width: 200px;
+            padding: 60px;
+            text-align: center;
+            font-size: 30px;
+            margin-top: 50px;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: dodgerblue;
+        }
+
+        .orange {
+            background-color: orangered;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Section 7: Get Ready for the Future: ES6 / ES2015</h1>
+
+    <div class="box green">I'm green!</div>
+    <div class="box blue">I'm blue!</div>
+    <div class="box orange">I'm orange!</div>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+
+    // -------- Lecture:  Arrays --------
+    const boxes = document.querySelectorAll('.box');
+
+    // ES5 - change style
+    
+    // calling all the array methods for the array
+    // var boxesArr5 = Array.prototype.slice.call(boxes);
+    // boxesArr5.forEach(function(cur) {
+    //     cur.style.backgroundColor = 'dodgerblue';
+    // });
+
+    // ES6 - change style
+    
+    // turns the node list from above to an array
+    const boxesArr6 = Array.from(boxes);
+    boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
+
+    // ES5 - change style on blue box only
+    
+    // for(var i = 0; i < boxesArr5.length; i++){
+    //     if(boxesArr5[i].className === 'box blue'){
+    //         continue;
+    //     }
+    //     boxesArr5[i].textContent = 'I changed to blue!'; 
+    // }
+
+    // ES6
+
+    // combines for each and map method
+    for (const cur of boxesArr6) {
+        // 'cur' is the value and position at the same time ==> boxesArr5[i]
+        if(cur.className.includes('blue')){
+            continue;
+        }
+        cur.textContent = 'I changed to blue!'; 
+    }
+
+
+
+    </script>
+</body>
+
+</html>
