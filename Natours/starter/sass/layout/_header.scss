@@ -1,0 +1,50 @@
+
+
+.header{
+    position: relative;
+
+    /* 95% of the viewport height */
+    height: 95vh; 
+
+    /* to right bottom | to right */
+    background-image: linear-gradient(
+        to right bottom,
+         rgba($color-primary-light, 0.8),
+         rgba($color-primary-dark, 0.8)),
+        url("../img/hero.jpg");
+
+    /* element is the size of the browser */
+    background-size: cover;
+
+    /* keeps the background image at the top --> top | bottom | center */
+    background-position: top;
+
+    /* specific a polygon that will clip the image 
+        - start with the corners at top left
+    */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box{
+        position: absolute;
+    
+        /* top: 40px; left: 4rem; */
+        top: 4rem;    
+        left: 4rem;
+    }
+    &__logo{
+        /* width will be figured out by the browser */
+        height: 3.5rem;
+    }
+
+    &__text-box{
+        position: absolute;
+        
+        /* TOP & LEFT are in relation to the parent element */
+        top: 40%;
+        left: 50%;
+
+        /* you want to TRANSLATE the box, we want it relational to the element itself */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

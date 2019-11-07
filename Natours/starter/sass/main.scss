@@ -1,0 +1,66 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "layout/header";
+
+@import "pages/home";
+
+
+
+/*
+    COLORS:
+    Light green: #7ed56f
+    Medium green: #55c57a
+    Dark green: #28b485
+*/
+
+/* changing ONE global font-size will allow us to change all the other 
+    * measurements at a particular media query  */
+
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+
+    /* keeps the entire heading-primary element from shaking
+        - no one really knows why this happens
+     */
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+
+        /* how fast the animation will start and stop at certain points
+            ease | ease-in | ease-out */
+        animation-timing-function: ease-out;
+
+        /* how many times the animation will execute */
+        /* animation-iteration-count: 3; */
+
+        /* waits a certain amount of time before executing */
+        /* animation-delay: 3s; */
+
+    }
+
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation-name: moveInRight 1s ease-out;
+    }
+}
+

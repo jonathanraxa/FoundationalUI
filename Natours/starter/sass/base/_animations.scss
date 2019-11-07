@@ -1,0 +1,49 @@
+
+/* creating an animation */
+@keyframes moveInLeft {
+    /* intial state */
+    0% {
+        opacity: 0;
+
+        /* animate in the X direction */
+        transform: translateX(-10rem);
+    }
+
+    80%{
+        transform: translateX(1rem);
+    }
+    
+    /* final state */
+    100% {
+        opacity: 1;
+
+        /* translate(0) to make it look the exact way it looks now */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80%{
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
