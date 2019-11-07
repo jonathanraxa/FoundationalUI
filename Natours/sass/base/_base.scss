@@ -1,0 +1,26 @@
+// partial file to be imported into the main file
+
+*, 
+*::after,
+*::before {
+    margin: 0; 
+    padding: 0;
+    /* this will be inherited where ever 
+    else it's declared */
+    box-sizing: inherit;
+
+}
+html{
+    /* 1rem = 10px 
+        * making font-size to px is bad practice. so we need to 
+        * make it to font-size:100%; and make it 10px by %
+        * divide what we want, by 16px
+        * so, 10/16 = .625 * 10, or 62.5%
+    */
+
+    // defines what 1rem is
+    font-size: 62.5%;
+}
+body{
+  box-sizing: border-box;
+}
