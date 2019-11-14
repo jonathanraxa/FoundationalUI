@@ -1,6 +1,7 @@
 
 /* pseudo classes - a specific state of a link (ie. visited, link, hover)*/
 .btn{
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
@@ -14,6 +15,11 @@
         position: relative;
 
         font-size: $default-font-size;
+
+        // change for the <button> element
+        border: none;
+        cursor: pointer;
+ 
     }
     &:hover{
         /* we want it to move UP, so it's a negative value */
@@ -30,7 +36,8 @@
             opacity: 0;
         }
     }
-    &:active{
+    &:active,
+    &:focus{
         transform: translateY(-.1rem);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }
@@ -40,6 +47,14 @@
 
         &::after{
             background-color: $color-white;
+        }
+    }
+    &--green{
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after{
+            background-color: $color-primary;
         }
     }
     /* psuedo element - acts like a child of the button 

@@ -60,7 +60,7 @@ body{
     -webkit-background-clip: text;
     color: transparent;
     // 2px is so small, doesn't matter if we want to scale or not
-    letter-spacing: 2px;
+    letter-spacing: .2rem;
     transition: all .2s;
 
     &:hover{
