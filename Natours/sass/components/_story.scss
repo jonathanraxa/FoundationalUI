@@ -11,14 +11,27 @@
     transform: skewX(-12deg);
     position: relative;
 
-    & > *{
-        transform: skewX(12deg);
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
     }
+
+    // gets rid of the background shape altogether
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
+
+
     &__shape{
-        width: 15rem;
+         width: 15rem;
         height: 15rem;
-        background-color: orangered;
         float: left;
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
 
         // defines what elements will shape ouside of the element
         -webkit-shape-outside: circle(50% at 50% 50%);
@@ -31,6 +44,10 @@
         // creating the margin between circle and text
         // + skewX
         transform: translateX(-3rem) skewX(12deg);
+        
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__img{
@@ -41,7 +58,12 @@
     }
 
     &__text{
-        transform: skewX(12deg);
+       transform: skewX(12deg);
+
+        // skew back to original on mobile
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__caption{

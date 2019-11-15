@@ -14,8 +14,7 @@ body{
     /* font-size: 16px; */
     line-height: 1.7;
     color: $color-grey-dark;
-    /* 3rem / 10px = 3rem */
-    padding: 3rem;
+
 }
 
 .heading-primary{
@@ -36,6 +35,13 @@ body{
         /* how fast the animation will start and stop at certain points
             ease | ease-in | ease-out */
         animation-timing-function: ease-out;
+
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
+
         /* how many times the animation will execute */
         /* animation-iteration-count: 3; */
         /* waits a certain amount of time before executing */
@@ -47,6 +53,10 @@ body{
         font-weight: 700;
         letter-spacing: 1.75rem;
         animation-name: moveInRight 1s ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
@@ -62,6 +72,13 @@ body{
     // 2px is so small, doesn't matter if we want to scale or not
     letter-spacing: .2rem;
     transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover{
         transform: skewY(2deg) skewX(15deg) scale(1.1);
