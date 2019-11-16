@@ -42,3 +42,9 @@ body{
 }
 
 // DON'T put everything under a single media query
+
+
+::selection{
+    background-color: $color-primary;
+    color: $color-white;
+}
