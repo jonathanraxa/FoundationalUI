@@ -1,0 +1,118 @@
+.container {
+    max-width: 120rem;
+    
+    // center within the view port
+    margin: 8rem auto;
+
+    background-color: var(--color-grey-light-2);
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0; 
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 12rem;
+    }
+    
+}
+
+.content {
+    display: flex;
+    
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+
+    // GROW | SHRINK | BASIS
+    flex: 0 0 18%;
+
+        
+    display: flex; 
+    flex-direction: column;
+
+    // this will push the legal text to the bottom
+    justify-content: space-between;
+
+}
+
+.hotel-view {
+    background-color: #fff;
+    
+    // test
+    // background-color: orangered;
+
+    // remove to allow content to define height of container
+    // height: 80rem;
+
+    // we want it to GROW as much as it can - over avalibale space
+    flex: 1;
+}
+
+.detail {
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    // parent font size
+    font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+       flex-direction: column;
+    }
+}
+
+.description {
+    font-size: 1.4rem;
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    margin-right: 4.5rem;
+    flex: 0 0 60%;
+    
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+    
+}
+
+.user-reviews {
+    // background-color: yellowgreen;
+    
+    // occupies the remaining space
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    // default is set to stretch on the cross-axis
+    align-items: center;
+}
