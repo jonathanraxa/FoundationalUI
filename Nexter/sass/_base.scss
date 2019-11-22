@@ -13,3 +13,51 @@ $color-grey-dark-2: #6D5D4B;
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0; 
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300; 
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+
+    /* 
+        DEFINING OUR ROWS...
+        
+        --> we want to decide to built responsively right away, so we're 
+        going to use viewport heights and widths
+
+        80vh 80% viewport heights  
+        40vw 40% of viewport width  
+        auto --> default (adapts to content)
+        min-content --> large as the content inside of it 
+    */
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+    /* 8 equally sized cols
+        - never grows larger than 14rem 
+        - 8 cols in the middle and on the sides, we have 1fr in the remaining space 
+        - we don't really need to name the rows, the columns are more important
+         -minmax(6rem, 1fr)  --> we want at least 6rem gutter 
+    */
+    grid-template-columns: [sidebar-start] 8rem 
+                            [sidebar-end full-start] minmax(6rem, 1fr) 
+                            [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) 
+                            [center-end] minmax(6rem, 1fr) [full-end];
+
+}
